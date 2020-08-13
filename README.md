@@ -17,8 +17,16 @@ $$
 
 ## 使用方法
 
+知道高斯核个数时, 可以使用如下方法:
+
 ```matlab
 gStr = gaussianFit(x,y,gNum); % x,y为数据, gNum为高斯核个数
+```
+
+不知道高斯核个数时, 可以使用如下方法, 自动进行高斯拟合, 寻找最合适的高斯核个数:
+
+```matlab
+gStr = autoGauFit(x,y,gNum); % x,y为数据
 ```
 
 详见 `test.m` 文件.

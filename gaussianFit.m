@@ -10,7 +10,7 @@ function outStruct = gaussianFit(x, y, peakNum, iterNum)
 %   - outStruct: struct, 结果结构体
 %
 % usage:
-%   outStruct = gaussianFit(x, y); % 使用模型参数
+%   outStruct = gaussianFit(x, y); % 使用默认参数
 %   outStruct = gaussianFit(x, y, 2, 100);
 %
 % docs:
