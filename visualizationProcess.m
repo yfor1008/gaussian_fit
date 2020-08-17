@@ -17,6 +17,7 @@ end
 legend_cell = cell(gNum+2, 1);
 
 if strcmpi(result, 'final')
+    figure('NumberTitle', 'off', 'Name', 'Final Result of Gaussian Fitting')
     plot(x, y, 'ro')
     axis([0, max(x), 0, max(y)*1.2])
     legend_cell{1} = '原始数据';
@@ -38,7 +39,7 @@ if strcmpi(result, 'final')
     [A, map] = rgb2ind(frame2im(getframe(gcf)), 256);
     imwrite(A, map, '拟合结果.png');
 elseif strcmpi(result, 'process')
-
+    figure('NumberTitle', 'off', 'Name', 'Process of Gaussian Fitting')
     err = outStruct.error;
     err_df = err(2:end) - err(1:end-1);
     err_df = round(err_df * 10000)/10000;
