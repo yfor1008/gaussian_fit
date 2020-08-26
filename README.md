@@ -42,6 +42,26 @@ visualizationProcess(x, y, gStr, 'final'); % 最终结果
 
 ![迭代过程](https://raw.githubusercontent.com/yfor1008/gaussian_fit/master/src/迭代过程.gif)
 
+## 2D拟合
+
+### 使用方法
+
+```matlab
+same = 1; % same=1, x 和 y 方向方差相同; same=0, 方差不同
+gStr = gaussianFit2D(x, y, z, same);
+```
+
+### 结果展示
+
+如下所示:
+
+```matlab
+% visualizationProcess2D(x, y, z, gStr, 'final'); % 最终结果
+visualizationProcess2D(x, y, z, gStr, 'process'); % 最终结果
+```
+
+![2D迭代过程](https://raw.githubusercontent.com/yfor1008/gaussian_fit/master/src/迭代过程_2D.gif)
+
 ## 参考
 
 1. https://terpconnect.umd.edu/~toh/spectrum/CurveFittingC.html
