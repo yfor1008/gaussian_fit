@@ -37,7 +37,7 @@ startPoint = calcStart(x, peakNum);
 
 % 优化参数
 options = optimset('TolX',0.0001, 'Display','off', 'MaxFunEvals',iterNum);
-opt = fminsearch(@(lambda)(fitgaussian(lambda, x, y)), startPoint, options);
+fminsearch(@(lambda)(fitgaussian(lambda, x, y)), startPoint, options);
 
 if INDEX+1 < iterNum
     HEIGHTS(INDEX+1:end, :) = [];
@@ -73,18 +73,6 @@ width = range / (3 * peakNum);
 startPoint = zeros(peakNum*2, 1);
 startPoint(1:2:end) = position;
 startPoint(2:2:end) = width;
-
-end
-
-function g = gaussian(x, position, width)
-% gaussian - 高斯函数
-%
-% input:
-%   - x: 1*n, 行向量, 自变量
-%   - position: scaler, 位置/均值
-%   - width: scaler, 宽度/方差
-
-g = exp(-((x - position)/width) .^2);
 
 end
 

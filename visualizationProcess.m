@@ -27,7 +27,7 @@ if strcmpi(result, 'final')
         height = outStruct.height(end, i);
         position = outStruct.position(end, i);
         width = outStruct.width(end, i);
-        gi = height * exp(-((x-position)/width).^2);
+        gi = height * gaussian(x, position, width);
         G = G + gi;
         plot(x, gi)
         legend_cell{i+1} = ['第 ', num2str(i) ' 个高斯'];
@@ -77,7 +77,7 @@ elseif strcmpi(result, 'process')
             height = outStruct.height(frm, i);
             position = outStruct.position(frm, i);
             width = outStruct.width(frm, i);
-            gi = height * exp(-((x-position)/width).^2);
+            gi = height * gaussian(x, position, width);
             G = G + gi;
             plot(x, gi)
             legend_cell{i+1} = ['第 ', num2str(i) ' 个高斯'];
